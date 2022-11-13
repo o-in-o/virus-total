@@ -1,13 +1,12 @@
 import "reflect-metadata";
 import { Action, Module, Mutation, VuexModule } from "vuex-module-decorators";
-import INavlinksService, {
+import IAppSetting, {
   NavLinkType,
-} from "@/services/navlinks/navlinks.service.interface";
+} from "@/services/appsetting/appsetting.service.interface";
 import { linksStoreModule } from "@/store";
 import { container } from "@/services/serviceContainer";
 
-const res: INavlinksService =
-  container.resolve<INavlinksService>("INavlinksService");
+const services: IAppSetting = container.resolve<IAppSetting>("IAppSetting");
 
 @Module({
   name: "linksStoreModule",
@@ -18,17 +17,21 @@ export class LinksStoreModule extends VuexModule {
 
   @Action
   async getterLinks() {
-    await res
+    await services
       .getExistingLink()
       .then((response) => linksStoreModule.updateLinksArray(response))
       .catch((error) => {
         console.log(error);
       });
-    console.log(this.linksArray);
   }
 
   @Mutation
   updateLinksArray(data: NavLinkType[]): void {
     this.linksArray = data;
   }
+
+  // @Action
+  // async getReport() {
+  //   await services.
+  // }
 }

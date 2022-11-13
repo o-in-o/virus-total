@@ -4,11 +4,9 @@ export type NavLinkType = {
   isActive: boolean;
 };
 
-export default interface INavlinksService {
+export default interface IAppSetting {
   /**
    * @description Получение списка ссылок
    */
   getExistingLink(): Promise<NavLinkType[]>;
-
-  testingService(): void;
 }

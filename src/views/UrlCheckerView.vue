@@ -1,20 +1,18 @@
 <template lang="pug">
   main-layout
-    LandingPage
+    h1  url check
 </template>
 
 <script lang="ts">
 import { Component, Vue } from "vue-property-decorator";
-import HelloWorld from "@/components/HelloWorld.vue";
-import { linksStoreModule } from "@/store";
 import MainLayout from "@/layouts/MainLayout.vue";
-import LandingPage from "@/pages/LandingPage/LandingPage.vue";
 
 @Component({
   components: {
-    LandingPage,
     MainLayout,
   },
 })
-export default class HomeView extends Vue {}
+export default class UrlCheckerView extends Vue {}
 </script>
+
+<style scoped lang="scss"></style>
