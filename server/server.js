@@ -26,5 +26,5 @@ app.use(express.json());
 app.use(express.urlencoded({ extended: false }));
 app.use(morgan("dev"));
 
-app.use("/api/records", require("./routes/record"));
+app.use("/api/", require("./routes/record"));
 app.use("/", express.static(path.join(__dirname, "../dist")));
