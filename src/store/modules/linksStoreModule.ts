@@ -29,9 +29,4 @@ export class LinksStoreModule extends VuexModule {
   updateLinksArray(data: NavLinkType[]): void {
     this.linksArray = data;
   }
-
-  // @Action
-  // async getReport() {
-  //   await services.
-  // }
 }

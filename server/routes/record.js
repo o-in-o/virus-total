@@ -31,19 +31,8 @@ router.delete("/:id", async (req, res) => {
   res.json({ state: "deleted" });
 });
 
-router.get("/report", async (req, res) => {
-  console.log(res);
-  console.log(req);
+router.get("/report/", async (req, res) => {
+  console.log("res");
 });
-
-sdk
-  .urlReport({
-    apikey: "e3c90f975ae445a2c5ae7f02de02424b9f8697317b0d4f49c3bf0ecc51f20d47",
-    resource: "2ip.ru",
-    allinfo: "false",
-    scan: "0",
-  })
-  .then(({ data }) => console.log(data))
-  .catch((err) => console.error(err));
 
 module.exports = router;
