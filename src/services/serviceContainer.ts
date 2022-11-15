@@ -6,6 +6,6 @@ import { UrlServices } from "@/services/urlservices/urlServices";
 
 container
   .registerSingleton<IAppSetting>("IAppSetting", AppSetting)
-  .registerSingleton<IUrlServices>("IUrlService", UrlServices);
+  .registerSingleton<IUrlServices>("IUrlServices", UrlServices);
 
 export { container };

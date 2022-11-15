@@ -1,4 +1,4 @@
-import { injectable } from "tsyringe";
+import { injectable, singleton } from "tsyringe";
 import IUrlServices, {
   ReportFromUrlType,
 } from "@/services/urlservices/url.service.interface";
@@ -36,7 +36,7 @@ export class UrlServices implements IUrlServices {
     };
 
     await this._urlService
-      .get<ReportFromUrlType>("")
+      .get<ReportFromUrlType>("/report")
       .then((response) => (report = response.data))
       .catch((error) => {
         throw error;

@@ -1,5 +1,5 @@
 <template lang="pug">
-  h1 Landing page
+  h1 Приложение по проверке вредоносных ссылок и сайтов
 </template>
 
 <script lang="ts">
