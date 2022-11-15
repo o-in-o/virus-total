@@ -17,6 +17,10 @@ import CustomButton from "@/components/ui/CustomButton/CustomButton.vue";
   },
 })
 export default class UrlCheckerView extends Vue {
+  test() {
+    console.log("click");
+  }
+
   // mounted() {
   //   checkUrlStoreModule.getReportFromUrl();
   // }
