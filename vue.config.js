@@ -9,4 +9,13 @@ module.exports = defineConfig({
       },
     },
   },
+  css: {
+    loaderOptions: {
+      sass: {
+        additionalData: `
+      @import "@/style/_variables.scss";
+      `,
+      },
+    },
+  },
 });
