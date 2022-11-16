@@ -1,18 +1,14 @@
 <template lang="pug">
   main-layout
     h1  url check
-    custom-button
-      span ok
 </template>
 
 <script lang="ts">
 import { Component, Vue } from "vue-property-decorator";
 import MainLayout from "@/layouts/MainLayout.vue";
-import CustomButton from "@/components/ui/CustomButton/CustomButton.vue";
 
 @Component({
   components: {
-    CustomButton,
     MainLayout,
   },
 })
