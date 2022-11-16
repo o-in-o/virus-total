@@ -1,14 +1,17 @@
 <template lang="pug">
   main-layout
-    h1  url check
+    url-check-page
+    router-view
 </template>
 
 <script lang="ts">
 import { Component, Vue } from "vue-property-decorator";
 import MainLayout from "@/layouts/MainLayout.vue";
+import UrlCheckPage from "@/pages/UrlCheckPage.vue";
 
 @Component({
   components: {
+    UrlCheckPage,
     MainLayout,
   },
 })
