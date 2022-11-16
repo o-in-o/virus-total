@@ -14,6 +14,7 @@ module.exports = defineConfig({
       sass: {
         additionalData: `
       @import "@/style/_variables.scss";
+      @import "@/style/main.scss";
       `,
       },
     },

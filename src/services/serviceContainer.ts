@@ -9,3 +9,5 @@ container
   .registerSingleton<IUrlServices>("IUrlServices", UrlServices);
 
 export { container };
+
+// FIXME Если вы сюда добрались, то с меня шоколадка.
