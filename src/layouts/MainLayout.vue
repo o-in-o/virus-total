@@ -49,12 +49,12 @@ main {
   width: 100%;
   display: flex;
   justify-content: center;
-  background-color: #f9f8f8;
+  background-color: map-get(map-get($pallete, neutral), 100);
 }
 
 section {
   margin-left: 250px;
-  background-color: #f9f8f8;
+  background-color: map-get(map-get($pallete, neutral), 100);
   height: 100vh;
 }
 </style>
