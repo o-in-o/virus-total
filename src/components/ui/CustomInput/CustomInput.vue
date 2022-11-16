@@ -2,8 +2,10 @@
   form(v-bind="$attrs" v-on="$listeners")
     .input-group(:class="currentClass")
       label.input-group-filled
-        input(required)
-        span.input-group-label Normal
+        input(required, v-model="model")
+        span.input-group-label {{ label }}
+        span.input-group-icon(v-bind="$attrs" v-on="$listeners")
+          slot
       p.status
         span.error(v-if="error" ) {{ error }}
         span.success(v-if="success" ) {{ success }}
@@ -16,9 +18,22 @@ import { Component, Prop, Vue } from "vue-property-decorator";
 
 @Component
 export default class CustomInput extends Vue {
+  @Prop({ required: true }) readonly label!: string;
+  @Prop() value!: any;
   @Prop({ default: "primary" }) readonly color!: inputType;
   @Prop() readonly error!: string;
   @Prop() readonly success!: string;
+
+  emittedValue: unknown = this.value;
+
+  get model(): unknown {
+    return this.value;
+  }
+
+  set model(val: unknown) {
+    this.emittedValue = val;
+    this.$emit("update:value", this.emittedValue);
+  }
 
   get currentClass(): string {
     return this.error ? "error" : this.color;
@@ -56,6 +71,20 @@ export default class CustomInput extends Vue {
   transition: top 0.2s;
 }
 
+.input-group-filled > .input-group-icon {
+  position: absolute;
+  top: 13px;
+  right: 12px;
+  color: map-get(map-get($pallete, neutral), 500);
+  cursor: pointer;
+  transition: ease-in-out all 0.3s;
+
+  &:hover {
+    color: map-get(map-get($pallete, neutral), 700);
+    scale: 130%;
+  }
+}
+
 .input-group-filled > input:focus + .input-group-label,
 .input-group-filled > input:valid + .input-group-label {
   top: 5px;
@@ -63,20 +92,22 @@ export default class CustomInput extends Vue {
   font-size: 12px;
 }
 
-.primary input {
-  border: 1px solid map-get(map-get($pallete, primary), 50);
-  background-color: map-get(map-get($pallete, primary), 50);
-  color: map-get(map-get($pallete, neutral), 900);
+.primary {
+  & input {
+    border: 1px solid map-get(map-get($pallete, primary), 50);
+    background-color: map-get(map-get($pallete, primary), 50);
+    color: map-get(map-get($pallete, neutral), 900);
 
-  &:hover {
-    border: 1px solid map-get(map-get($pallete, primary), 500);
-  }
+    &:hover {
+      border: 1px solid map-get(map-get($pallete, primary), 500);
+    }
 
-  &:focus {
-    border: 1px solid map-get(map-get($pallete, primary), 500);
-    outline: none;
-    background-color: map-get(map-get($pallete, neutral), white);
-    color: map-get(map-get($pallete, neutral), 800);
+    &:focus {
+      border: 1px solid map-get(map-get($pallete, primary), 500);
+      outline: none;
+      background-color: map-get(map-get($pallete, neutral), white);
+      color: map-get(map-get($pallete, neutral), 800);
+    }
   }
 }
 
