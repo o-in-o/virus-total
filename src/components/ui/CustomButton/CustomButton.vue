@@ -41,6 +41,7 @@ export default class CustomButton extends Vue {
   align-items: center;
   justify-content: center;
   cursor: pointer;
+  margin: 7px 12px;
 }
 
 .small {
