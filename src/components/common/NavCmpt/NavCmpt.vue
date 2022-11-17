@@ -6,16 +6,12 @@
 <script lang="ts">
 import { Component, Vue } from "vue-property-decorator";
 import { NavLinkType } from "@/services/appsetting/appsetting.service.interface";
-import { linksStoreModule } from "@/store";
+import { appSettingStoreModule, linksStoreModule } from "@/store";
 
 @Component
 export default class NavCmpt extends Vue {
   get existingLinks(): NavLinkType[] {
-    return linksStoreModule.linksArray;
-  }
-
-  created() {
-    linksStoreModule.getterLinks();
+    return appSettingStoreModule.linksArray;
   }
 }
 </script>
@@ -27,17 +23,22 @@ export default class NavCmpt extends Vue {
   width: 100%;
 
   & a {
-    font-weight: 400;
-    color: #8a92a6;
+    color: map-get(map-get($pallete, neutral), 600);
     width: auto;
+    font-weight: 600;
     margin-bottom: 7px;
     padding: 5px 10px;
     border-radius: 4px;
     text-decoration: none;
+    transition: ease-in-out all 0.3s;
 
     &.router-link-exact-active {
-      color: #fff;
-      background-color: #3a57e8;
+      color: map-get(map-get($pallete, primary), 700);
+      background-color: map-get(map-get($pallete, primary), 200);
+    }
+
+    &:hover {
+      background-color: map-get(map-get($pallete, primary), 50);
     }
   }
 }

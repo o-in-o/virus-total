@@ -20,5 +20,5 @@ export default interface IUrlServices {
   /**
    * @description Получение отчета об адресе
    */
-  getReportFromUrl(): Promise<ReportFromUrlType>;
+  getReportFromUrl(val: string): Promise<ReportFromUrlType>;
 }
