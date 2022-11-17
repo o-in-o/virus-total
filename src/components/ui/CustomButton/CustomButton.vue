@@ -77,7 +77,6 @@ export default class CustomButton extends Vue {
 }
 
 button {
-  width: 100%;
   font-weight: 600;
   margin: 0;
   padding: 0;
@@ -85,6 +84,11 @@ button {
   border: 3px solid transparent;
   background-color: transparent;
   cursor: pointer;
+
+  & a {
+    color: #fff;
+    text-decoration: none;
+  }
 }
 
 .primary {
