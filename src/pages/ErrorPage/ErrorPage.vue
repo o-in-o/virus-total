@@ -1,7 +1,7 @@
 <template lang="pug">
   base-layout
     #error-page
-      section
+      section.error-container
         p.error-title 404
         p.error Страница не найдена
         p.error-description Упс! Страница, которую вы ищете, не существует. Возможно, она была перемещена или удалена.
