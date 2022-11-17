@@ -1,7 +1,6 @@
 <template lang="pug">
   main-layout
     url-check-page
-    router-view
 </template>
 
 <script lang="ts">
@@ -22,4 +21,4 @@ export default class UrlCheckerView extends Vue {
 }
 </script>
 
-<style scoped lang="scss"></style>
+<style lang="scss" scoped></style>

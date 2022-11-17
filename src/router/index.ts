@@ -1,6 +1,7 @@
 import Vue from "vue";
 import VueRouter, { RouteConfig } from "vue-router";
 import HomeView from "../views/HomeView.vue";
+import UrlCheckerView from "@/views/UrlCheckerView.vue";
 
 Vue.use(VueRouter);
 
@@ -13,8 +14,15 @@ const routes: Array<RouteConfig> = [
   {
     path: "/url-check",
     name: "url-check",
+    component: UrlCheckerView,
+  },
+  {
+    path: "*",
+    name: "error-page",
     component: () =>
-      import(/* webpackChunkName: "about" */ "../views/UrlCheckerView.vue"),
+      import(
+        /* webpackChunkName: "about" */ "../pages/ErrorPage/ErrorPage.vue"
+      ),
   },
 ];
 
