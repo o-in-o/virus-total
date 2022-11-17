@@ -1,6 +1,7 @@
 <template lang="pug">
   header
-    p.logo лого
+    router-link(to="/")
+      .logo лого
 </template>
 
 <script lang="ts">
@@ -27,5 +28,9 @@ header {
   height: 30px;
   margin: 0 20px;
   text-transform: uppercase;
+}
+
+a {
+  text-decoration: none;
 }
 </style>
