@@ -26,9 +26,10 @@ export class CheckUrlStoreModule extends VuexModule {
   };
 
   @Action
-  async getReportFromUrl() {
+  async getReportFromUrl(val: string) {
+    console.log(process.env);
     await checkService
-      .getReportFromUrl()
+      .getReportFromUrl(val)
       .then((response) => {
         checkUrlStoreModule.updateReport(response);
       })
