@@ -10,7 +10,7 @@ export class UrlServices implements IUrlServices {
 
   constructor() {
     this._urlService = UrlServices.createUrlServiceApi(
-      `${process.env.VUE_APP_URL_VIRUSTOTAL}`
+      "http://localhost:3000/api/"
     );
   }
 
@@ -20,7 +20,7 @@ export class UrlServices implements IUrlServices {
     });
   }
 
-  async getReportFromUrl(val: string): Promise<ReportFromUrlType> {
+  async getReportFromUrl(): Promise<ReportFromUrlType> {
     let report: ReportFromUrlType = {
       url: "",
       total: 0,
@@ -34,11 +34,9 @@ export class UrlServices implements IUrlServices {
       filescan_id: "",
       verbose_msg: "",
     };
-    console.log(process.env);
+
     await this._urlService
-      .get<ReportFromUrlType>("/url/report/", {
-        params: { apikey: process.env.VUE_APP_API_VIRUSTOTAL, resource: val },
-      })
+      .get<ReportFromUrlType>("/report")
       .then((response) => (report = response.data))
       .catch((error) => {
         throw error;

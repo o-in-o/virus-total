@@ -1,13 +1,14 @@
 <template lang="pug">
-  .input-group(:class="currentClass", v-bind="$attrs", v-on="$listeners")
-    label.input-group-filled
-      input(required, v-model="model")
-      span.input-group-label {{ label }}
-      span.input-group-icon(v-bind="$attrs", v-on="$listeners")
-        slot
-    p.status
-      span.error(v-if="error" ) {{ error }}
-      span.success(v-if="success" ) {{ success }}
+  form(v-bind="$attrs" v-on="$listeners")
+    .input-group(:class="currentClass")
+      label.input-group-filled
+        input(required, v-model="model")
+        span.input-group-label {{ label }}
+        span.input-group-icon(v-bind="$attrs" v-on="$listeners")
+          slot
+      p.status
+        span.error(v-if="error" ) {{ error }}
+        span.success(v-if="success" ) {{ success }}
 </template>
 
 <script lang="ts">
@@ -40,7 +41,7 @@ export default class CustomInput extends Vue {
 }
 </script>
 
-<style lang="scss" scoped>
+<style scoped lang="scss">
 .input-content input {
   font-size: 20px;
   font-weight: 600;
