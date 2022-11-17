@@ -4218,13 +4218,6 @@ eslint-plugin-prettier@^4.0.0:
   dependencies:
     prettier-linter-helpers "^1.0.0"
 
-eslint-plugin-vue-pug@^0.5.4:
-  version "0.5.4"
-  resolved "https://registry.yarnpkg.com/eslint-plugin-vue-pug/-/eslint-plugin-vue-pug-0.5.4.tgz#d852faf856595fa4257ffb257356295799445bcc"
-  integrity sha512-4/EHB8B4cSLBJkaV4D+fivbZMiw/+Ios0BLJGIHm9mibZw1Yp5hp7xai/5iSKlnPYpsaFCwtzed9WGiUwOrBdQ==
-  dependencies:
-    vue-eslint-parser-template-tokenizer-pug "^0.4.9"
-
 eslint-plugin-vue@^8.0.3:
   version "8.7.1"
   resolved "https://registry.npmmirror.com/eslint-plugin-vue/-/eslint-plugin-vue-8.7.1.tgz#f13c53547a0c9d64588a675cc5ecc6ccaf63703f"
@@ -8584,13 +8577,6 @@ vue-class-component@^7.2.3:
   version "7.2.6"
   resolved "https://registry.npmmirror.com/vue-class-component/-/vue-class-component-7.2.6.tgz#8471e037b8e4762f5a464686e19e5afc708502e4"
   integrity sha512-+eaQXVrAm/LldalI272PpDe3+i4mPis0ORiMYxF6Ae4hyuCh15W8Idet7wPUEs4N4YptgFHGys4UrgNQOMyO6w==
-
-vue-eslint-parser-template-tokenizer-pug@^0.4.9:
-  version "0.4.9"
-  resolved "https://registry.yarnpkg.com/vue-eslint-parser-template-tokenizer-pug/-/vue-eslint-parser-template-tokenizer-pug-0.4.9.tgz#2e328e5f3cb4d5677171847f696b44ef155995f2"
-  integrity sha512-Rt5dI7OJG9q7EvXIlcYHqzU39RuHxq7KLjjJ/gxDNj3pE1GU5iIbXGZMLhdTPD8CTCHmdhV/V7m7XmclawgjKg==
-  dependencies:
-    pug-lexer "^5.0.1"
 
 vue-eslint-parser@^8.0.0, vue-eslint-parser@^8.0.1:
   version "8.3.0"
