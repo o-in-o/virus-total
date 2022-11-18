@@ -6,7 +6,7 @@
 <script lang="ts">
 import { Component, Vue } from "vue-property-decorator";
 import { NavLinkType } from "@/services/appsetting/appsetting.service.interface";
-import { appSettingStoreModule, linksStoreModule } from "@/store";
+import { appSettingStoreModule } from "@/store";
 
 @Component
 export default class NavCmpt extends Vue {

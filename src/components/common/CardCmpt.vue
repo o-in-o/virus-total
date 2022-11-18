@@ -6,14 +6,23 @@
 </template>
 
 <script lang="ts">
-import { Component, Vue } from "vue-property-decorator";
+import { Component, Prop, Vue } from "vue-property-decorator";
 
 @Component
-export default class CardCmpt extends Vue {}
+export default class CardCmpt extends Vue {
+  @Prop() readonly wide!: number;
+}
 </script>
 
 <style scoped lang="scss">
 #card-container {
+  justify-content: center;
+  align-items: center;
+  display: flex;
+  flex-wrap: wrap;
+  box-sizing: content-box;
+
+  margin: 20px;
   padding: 20px;
   background-color: map-get(map-get($pallete, neutral), white);
   border-radius: 4px;
