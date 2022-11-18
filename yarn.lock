@@ -8585,6 +8585,13 @@ vue-class-component@^7.2.3:
   resolved "https://registry.npmmirror.com/vue-class-component/-/vue-class-component-7.2.6.tgz#8471e037b8e4762f5a464686e19e5afc708502e4"
   integrity sha512-+eaQXVrAm/LldalI272PpDe3+i4mPis0ORiMYxF6Ae4hyuCh15W8Idet7wPUEs4N4YptgFHGys4UrgNQOMyO6w==
 
+vue-eslint-parser-template-tokenizer-pug@^0.4.9:
+  version "0.4.9"
+  resolved "https://registry.yarnpkg.com/vue-eslint-parser-template-tokenizer-pug/-/vue-eslint-parser-template-tokenizer-pug-0.4.9.tgz#2e328e5f3cb4d5677171847f696b44ef155995f2"
+  integrity sha512-Rt5dI7OJG9q7EvXIlcYHqzU39RuHxq7KLjjJ/gxDNj3pE1GU5iIbXGZMLhdTPD8CTCHmdhV/V7m7XmclawgjKg==
+  dependencies:
+    pug-lexer "^5.0.1"
+
 vue-eslint-parser@^8.0.0, vue-eslint-parser@^8.0.1:
   version "8.3.0"
   resolved "https://registry.npmmirror.com/vue-eslint-parser/-/vue-eslint-parser-8.3.0.tgz#5d31129a1b3dd89c0069ca0a1c88f970c360bd0d"

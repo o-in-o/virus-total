@@ -2,7 +2,7 @@ import "reflect-metadata";
 import { Action, Module, Mutation, VuexModule } from "vuex-module-decorators";
 import { container } from "@/services/serviceContainer";
 import IUrlServices, {
-  ReportFromUrlType,
+  ResponseReportType,
 } from "@/services/urlservices/url.service.interface";
 import { checkUrlStoreModule } from "@/store";
 
@@ -11,23 +11,10 @@ const checkService: IUrlServices =
 
 @Module({ name: "checkUrlStoreModule", namespaced: true })
 export class CheckUrlStoreModule extends VuexModule {
-  report: ReportFromUrlType = {
-    url: "",
-    total: 0,
-    scans: {},
-    scan_id: "",
-    scan_date: "",
-    response_code: 0,
-    resource: "",
-    positives: 0,
-    permalink: "",
-    filescan_id: "",
-    verbose_msg: "",
-  };
+  report: ResponseReportType | null = null;
 
   @Action
   async getReportFromUrl(val: string) {
-    console.log(process.env);
     await checkService
       .getReportFromUrl(val)
       .then((response) => {
@@ -39,7 +26,7 @@ export class CheckUrlStoreModule extends VuexModule {
   }
 
   @Mutation
-  updateReport(data: ReportFromUrlType): void {
+  updateReport(data: ResponseReportType | null): void {
     this.report = data;
   }
 }

@@ -1,6 +1,6 @@
 import { injectable, singleton } from "tsyringe";
 import IUrlServices, {
-  ReportFromUrlType,
+  ResponseReportType,
 } from "@/services/urlservices/url.service.interface";
 import axios, { AxiosInstance } from "axios";
 
@@ -20,8 +20,8 @@ export class UrlServices implements IUrlServices {
     });
   }
 
-  async getReportFromUrl(val: string): Promise<ReportFromUrlType> {
-    let report: ReportFromUrlType = {
+  async getReportFromUrl(val: string): Promise<ResponseReportType> {
+    let report: ResponseReportType = {
       url: "",
       total: 0,
       scans: {},
@@ -34,10 +34,15 @@ export class UrlServices implements IUrlServices {
       filescan_id: "",
       verbose_msg: "",
     };
-    console.log(process.env);
+
     await this._urlService
-      .get<ReportFromUrlType>("/url/report/", {
-        params: { apikey: process.env.VUE_APP_API_VIRUSTOTAL, resource: val },
+      .get<ResponseReportType>(`/url/report`, {
+        params: {
+          apikey: process.env.VUE_APP_API_VIRUSTOTAL,
+          resource: val,
+          allinfo: false,
+          scan: 0,
+        },
       })
       .then((response) => (report = response.data))
       .catch((error) => {

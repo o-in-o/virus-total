@@ -5,8 +5,6 @@
 
 <script lang="ts">
 import { Component, Vue } from "vue-property-decorator";
-import HelloWorld from "@/components/HelloWorld.vue";
-import { linksStoreModule } from "@/store";
 import MainLayout from "@/layouts/MainLayout.vue";
 import LandingPage from "@/pages/LandingPage/LandingPage.vue";
 
